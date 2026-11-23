@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://3nlmlc3y3llo"]
+
+[ext_resource type="Script" uid="uid://dp1jpeecn6l64" path="res://scripts/main/main.gd" id="1_u1xfj"]
+[ext_resource type="PackedScene" uid="uid://bsqel7s421yol" path="res://scenes/player/player.tscn" id="2_nha0i"]
+[ext_resource type="PackedScene" uid="uid://briawxeyv1odu" path="res://scenes/map/map.tscn" id="2_q24mn"]
+
+[node name="Main" type="Node2D" unique_id=1898294840]
+script = ExtResource("1_u1xfj")
+
+[node name="Map" parent="." unique_id=345356545 instance=ExtResource("2_q24mn")]
+
+[node name="Player" parent="." unique_id=1488650876 instance=ExtResource("2_nha0i")]
+z_index = 1

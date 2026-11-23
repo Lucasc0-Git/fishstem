@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://x1rji03jfewf"]
+
+[ext_resource type="Script" uid="uid://bjd6scsi6imme" path="res://scripts/ui/start_scene.gd" id="1_onmod"]
+
+[node name="StartScene" type="CanvasLayer" unique_id=1611756808]
+script = ExtResource("1_onmod")
+
+[node name="Control" type="Control" parent="." unique_id=845458309]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1521217711]
+custom_minimum_size = Vector2(500, 350)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -110.0
+offset_right = 400.0
+offset_bottom = 190.0
+grow_vertical = 2
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="Control/VBoxContainer" unique_id=39859894]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer" unique_id=1577461001]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Quit"
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1517971748]
+z_index = -1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(1.92523e-06, 0, 0.6081046, 1)
+
+[connection signal="pressed" from="Control/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

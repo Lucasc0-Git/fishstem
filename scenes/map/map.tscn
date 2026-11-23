@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://briawxeyv1odu"]
+
+[sub_resource type="Gradient" id="Gradient_scl2d"]
+colors = PackedColorArray(0.0006922887, 0.11120824, 0.48463523, 1, 0, 0.57254905, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2a8ad"]
+gradient = SubResource("Gradient_scl2d")
+width = 200
+height = 200
+fill_from = Vector2(0.90869564, 1)
+
+[node name="Map" type="Node2D" unique_id=345356545]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=888502896]
+offset_left = -10000.0
+offset_top = -3000.0
+offset_right = 10000.0
+offset_bottom = 3000.0
+texture = SubResource("GradientTexture2D_2a8ad")
