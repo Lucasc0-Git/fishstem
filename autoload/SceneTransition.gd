@@ -1,8 +1,7 @@
-extends Control
+extends CanvasLayer
 
 
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
-
+@onready var anim_player: AnimationPlayer = $Control/AnimationPlayer
 
 
 

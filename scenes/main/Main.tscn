@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dp1jpeecn6l64" path="res://scripts/main/main.gd" id="1_u1xfj"]
 [ext_resource type="PackedScene" uid="uid://bsqel7s421yol" path="res://scenes/player/player.tscn" id="2_nha0i"]
 [ext_resource type="PackedScene" uid="uid://briawxeyv1odu" path="res://scenes/map/map.tscn" id="2_q24mn"]
+[ext_resource type="PackedScene" uid="uid://bpagoqi6yagt1" path="res://scenes/ui/hud.tscn" id="4_gyg6b"]
 
 [node name="Main" type="Node2D" unique_id=1898294840]
 script = ExtResource("1_u1xfj")
@@ -11,3 +12,5 @@ script = ExtResource("1_u1xfj")
 
 [node name="Player" parent="." unique_id=1488650876 instance=ExtResource("2_nha0i")]
 z_index = 1
+
+[node name="HUD" parent="." unique_id=2110349245 instance=ExtResource("4_gyg6b")]
