@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bsqel7s421yol"]
 
 [ext_resource type="Script" uid="uid://bloy8uhg24m0v" path="res://scripts/player/player.gd" id="1_8afob"]
+[ext_resource type="Script" uid="uid://c6m4wweqeqmsk" path="res://scripts/player/player_camera.gd" id="2_dovo2"]
 
 [node name="Player" type="Node2D" unique_id=1488650876]
 process_mode = 1
@@ -10,3 +11,4 @@ script = ExtResource("1_8afob")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1703809140]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+script = ExtResource("2_dovo2")
