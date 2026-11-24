@@ -18,6 +18,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owwb1"]
 size = Vector2(334, 304)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arn7s"]
+size = Vector2(488, 359)
+
 [node name="Ice" unique_id=405931296 instance=ExtResource("1_0ja4f")]
 z_index = 1
 script = ExtResource("2_owwb1")
@@ -28,3 +31,8 @@ sprite_frames = SubResource("SpriteFrames_3572f")
 [node name="CollisionShape2D" parent="." index="1" unique_id=2144402430]
 position = Vector2(8, 37)
 shape = SubResource("RectangleShape2D_owwb1")
+
+[node name="CollisionShape2D" parent="ClickArea" parent_id_path=PackedInt32Array(1910408838) index="0" unique_id=1945367427]
+position = Vector2(0, 37.5)
+shape = SubResource("RectangleShape2D_arn7s")
+debug_color = Color(0.646248, 0.5031468, 0.36814457, 0.13725491)

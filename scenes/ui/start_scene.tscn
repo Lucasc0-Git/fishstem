@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://x1rji03jfewf"]
 
 [ext_resource type="Script" uid="uid://bjd6scsi6imme" path="res://scripts/ui/start_scene.gd" id="1_onmod"]
+[ext_resource type="Theme" uid="uid://dbtfoo2xn6vwi" path="res://themes/DefaultTheme.tres" id="2_24nho"]
 
 [node name="StartScene" type="CanvasLayer" unique_id=1611756808]
 process_mode = 3
@@ -16,7 +17,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1521217711]
-custom_minimum_size = Vector2(500, 350)
+custom_minimum_size = Vector2(700, 400)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -29,20 +30,25 @@ grow_vertical = 2
 alignment = 1
 
 [node name="StartGameButton" type="Button" parent="Control/VBoxContainer" unique_id=39859894]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+theme = ExtResource("2_24nho")
 text = "Play"
 
 [node name="QuitButton" type="Button" parent="Control/VBoxContainer" unique_id=1577461001]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+theme = ExtResource("2_24nho")
 text = "Quit"
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=1517971748]
 z_index = -1
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 color = Color(1.92523e-06, 0, 0.6081046, 1)
 

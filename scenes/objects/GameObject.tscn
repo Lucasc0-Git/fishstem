@@ -10,3 +10,9 @@ scale = Vector2(0.3, 0.3)
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2144402430]
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=1910408838]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1945367427]
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]
