@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://gdn5fwbi4xfx"]
+
+[ext_resource type="PackedScene" uid="uid://0hepmx8sj2di" path="res://scenes/main/minigames/minigame.tscn" id="1_nql1s"]
+[ext_resource type="Script" uid="uid://dv4onf0qqmyax" path="res://scripts/main/minigames/ice_breaking_minigame.gd" id="2_yhhrj"]
+[ext_resource type="Texture2D" uid="uid://bs5yjv8gnj0i2" path="res://textures/ice_minigame/ice_tiles.png" id="3_n0oct"]
+[ext_resource type="Texture2D" uid="uid://n8wpgjhhk6cs" path="res://textures/ice.png" id="3_yik0u"]
+
+[sub_resource type="Gradient" id="Gradient_yhhrj"]
+colors = PackedColorArray(0.0005544422, 0.07408721, 0.37988383, 1, 0.16956082, 0.3739764, 0.70052934, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2a8ad"]
+gradient = SubResource("Gradient_yhhrj")
+fill_from = Vector2(0.5633803, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yik0u"]
+texture = ExtResource("3_n0oct")
+texture_region_size = Vector2i(1000, 1000)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2a8ad"]
+tile_size = Vector2i(1000, 1000)
+sources/1 = SubResource("TileSetAtlasSource_yik0u")
+tile_proxies/coords_level = [[0, Vector2i(0, 0)], [4, Vector2i(0, 0)], [1, Vector2i(0, 0)], [4, Vector2i(1, 0)], [2, Vector2i(0, 0)], [4, Vector2i(2, 0)]]
+
+[node name="IceBreakingMinigame" unique_id=784382624 instance=ExtResource("1_nql1s")]
+script = ExtResource("2_yhhrj")
+
+[node name="Camera2D" parent="." index="1" unique_id=1468493679]
+zoom = Vector2(0.2, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="." index="2" unique_id=1356885679]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5376.0
+offset_top = -3020.0
+offset_right = 5376.0
+offset_bottom = 3020.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_2a8ad")
+
+[node name="TextureRect2" type="TextureRect" parent="." index="3" unique_id=1934298144]
+modulate = Color(0.6706895, 0.6706895, 0.6706895, 0.67058825)
+offset_left = -5634.0
+offset_top = -4058.0
+offset_right = 5239.0
+offset_bottom = 3201.0
+texture = ExtResource("3_yik0u")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="4" unique_id=1261264816]
+tile_map_data = PackedByteArray("AAD9//7/AQABAAAAAAD+//7/AQABAAAAAAD///7/AQABAAAAAAAAAP7/AQABAAAAAAABAP7/AQABAAAAAAACAP7/AQABAAAAAAADAP//AQABAAAAAAACAP//AQABAAAAAAABAP//AQABAAAAAAAAAP//AQABAAAAAAD/////AQABAAAAAAD+////AQABAAAAAAD9////AQABAAAAAAD8////AQABAAAAAAD8/wAAAQABAAAAAAD9/wAAAQABAAAAAAD+/wAAAQABAAAAAAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAACAAEAAQABAAAAAAABAAEAAQABAAAAAAAAAAEAAQABAAAAAAD//wEAAQABAAAAAAD+/wEAAQABAAAAAAD9/wEAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_2a8ad")

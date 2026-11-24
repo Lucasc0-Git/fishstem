@@ -17,6 +17,10 @@ func change_scene_to_file(file_path: String) -> void:
 		get_tree().change_scene_to_file(file_path)
 	await _trans_show()
 
+func transition_callback(callable: Callable, args: Array) -> void:
+	await _trans_hide()
+	callable.call(args)
+	await _trans_show()
 
 func _trans_hide() -> void:
 	anim_player.play("trans_hide")

@@ -4,6 +4,7 @@ class_name GameObject
 signal interacted()
 
 @export var starts_minigame: bool = false
+@export var free_after_finishing_minigame: bool = true
 @export var minigame_scene: PackedScene = null
 @export var difficulty_config: Dictionary = {}
 
@@ -15,5 +16,7 @@ func _on_click_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: 
 		interacted.emit()
 
 func _on_interacted() -> void:
-	print("interacted")
 	if not starts_minigame: return
+	MinigameManager.launch(minigame_scene)
+	if await MinigameManager.minigame_finished:
+		queue_free()

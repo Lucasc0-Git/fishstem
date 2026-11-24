@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dbjybhequci3t" path="res://scenes/objects/game_object.tscn" id="1_0ja4f"]
 [ext_resource type="Texture2D" uid="uid://n8wpgjhhk6cs" path="res://textures/ice.png" id="2_3572f"]
 [ext_resource type="Script" uid="uid://d2g171lpoqdk6" path="res://scripts/objects/ice.gd" id="2_owwb1"]
+[ext_resource type="PackedScene" uid="uid://gdn5fwbi4xfx" path="res://scenes/main/minigames/ice_breaking_minigame.tscn" id="3_egvxn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3572f"]
 animations = [{
@@ -24,6 +25,8 @@ size = Vector2(488, 359)
 [node name="Ice" unique_id=405931296 instance=ExtResource("1_0ja4f")]
 z_index = 1
 script = ExtResource("2_owwb1")
+starts_minigame = true
+minigame_scene = ExtResource("3_egvxn")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1908073853]
 sprite_frames = SubResource("SpriteFrames_3572f")
