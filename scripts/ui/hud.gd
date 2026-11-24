@@ -2,8 +2,8 @@ extends CanvasLayer
 class_name HUD
 
 
+@onready var dna_label: Label = %DNALabel
 
-@onready var dna_label: Label = $Control/DNALabel
 
 
 func _ready() -> void:

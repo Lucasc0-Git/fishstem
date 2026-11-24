@@ -57,6 +57,7 @@ _data = {
 }
 
 [node name="SceneTransition" type="CanvasLayer" unique_id=1766858746]
+process_mode = 3
 layer = 500
 script = ExtResource("1_umwhv")
 

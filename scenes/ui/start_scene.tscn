@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bjd6scsi6imme" path="res://scripts/ui/start_scene.gd" id="1_onmod"]
 
 [node name="StartScene" type="CanvasLayer" unique_id=1611756808]
+process_mode = 3
 script = ExtResource("1_onmod")
 
 [node name="Control" type="Control" parent="." unique_id=845458309]

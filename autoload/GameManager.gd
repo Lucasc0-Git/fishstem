@@ -1,7 +1,7 @@
 extends Node
 
+
 var main: Main = null
-var main_scene_filepath: String = "res://scenes/main/Main.tscn"
 var game_loaded: bool = false
 
 var dna: int = 0
@@ -24,5 +24,7 @@ func set_dna(amount: int) -> void:
 	dna = amount
 	dna_changed.emit()
 
-func start_game() -> void:
-	SceneTransition.change_scene_to_file(main_scene_filepath)
+func start_game(_save_name: String = "save not made :P") -> void:
+	print("starting the game")
+	await SceneTransition.change_scene_to_file(Constants.MAIN_SCENE_FILEPATH)
+	get_tree().paused = false

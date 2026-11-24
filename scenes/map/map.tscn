@@ -1,19 +1,49 @@
 [gd_scene format=3 uid="uid://briawxeyv1odu"]
 
+[ext_resource type="Texture2D" uid="uid://chm5dv8vvr7fw" path="res://textures/testing-bg.png" id="1_sxf4j"]
+[ext_resource type="Script" uid="uid://ddfpa4o5jcdel" path="res://scripts/main/map.gd" id="1_tqkkf"]
+[ext_resource type="PackedScene" uid="uid://bvc8dnr0m0vuh" path="res://scenes/objects/ice.tscn" id="3_a2pkv"]
+
 [sub_resource type="Gradient" id="Gradient_scl2d"]
+offsets = PackedFloat32Array(0.39156628, 1)
 colors = PackedColorArray(0.0006922887, 0.11120824, 0.48463523, 1, 0, 0.57254905, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2a8ad"]
 gradient = SubResource("Gradient_scl2d")
 width = 200
 height = 200
-fill_from = Vector2(0.90869564, 1)
+fill_from = Vector2(0.76521736, 1)
 
 [node name="Map" type="Node2D" unique_id=345356545]
+process_mode = 1
+script = ExtResource("1_tqkkf")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=888502896]
+[node name="TestingMap" type="TextureRect" parent="." unique_id=888502896]
 offset_left = -10000.0
 offset_top = -3000.0
 offset_right = 10000.0
 offset_bottom = 3000.0
 texture = SubResource("GradientTexture2D_2a8ad")
+
+[node name="TestingMap2" type="Node2D" parent="." unique_id=66826574]
+
+[node name="TextureRect2" type="TextureRect" parent="TestingMap2" unique_id=1874349479]
+offset_left = -979.0
+offset_top = -294.0
+offset_right = 2021.0
+offset_bottom = 706.0
+texture = ExtResource("1_sxf4j")
+
+[node name="Ice" parent="TestingMap2" unique_id=405931296 instance=ExtResource("3_a2pkv")]
+position = Vector2(1750, 314)
+scale = Vector2(0.5, 0.5)
+
+[node name="Ice2" parent="TestingMap2" unique_id=1135535542 instance=ExtResource("3_a2pkv")]
+position = Vector2(567, 393)
+scale = Vector2(0.5, 0.5)
+
+[node name="Lvl1" type="Node2D" parent="." unique_id=727593971]
+
+[node name="Lvl2" type="Node2D" parent="." unique_id=1287236093]
+
+[node name="Lvl3" type="Node2D" parent="." unique_id=23585408]

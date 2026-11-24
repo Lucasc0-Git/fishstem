@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bloy8uhg24m0v" path="res://scripts/player/player.gd" id="1_8afob"]
 
 [node name="Player" type="Node2D" unique_id=1488650876]
+process_mode = 1
+z_index = 3
 script = ExtResource("1_8afob")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1703809140]
