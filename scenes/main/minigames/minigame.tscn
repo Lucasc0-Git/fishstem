@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://0hepmx8sj2di"]
+
+[ext_resource type="Script" uid="uid://r65quw4wyk08" path="res://scripts/main/minigames/base_minigame.gd" id="1_j055w"]
+[ext_resource type="Script" uid="uid://c7y7de773ty3w" path="res://scripts/main/minigames/minigame_camera.gd" id="2_ncifb"]
+
+[node name="Minigame" type="Node2D" unique_id=784382624]
+script = ExtResource("1_j055w")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1740923505]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1468493679]
+script = ExtResource("2_ncifb")

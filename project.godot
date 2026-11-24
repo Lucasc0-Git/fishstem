@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 GameManager="*uid://oqr7x7guppvw"
 SceneTransition="*uid://bp5bn0wnlc2vy"
 SaveManager="*uid://bwcqd0txjayp6"
+MinigameManager="*uid://bu46chtvyeorp"
 
 [display]
 

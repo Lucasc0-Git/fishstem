@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dbjybhequci3t"]
 
-[ext_resource type="Script" uid="uid://c04f8xqhm2l2e" path="res://scripts/objects/object.gd" id="1_arn7s"]
+[ext_resource type="Script" uid="uid://c04f8xqhm2l2e" path="res://scripts/objects/object.gd" id="1_qxmtg"]
 
 [node name="GameObject" type="StaticBody2D" unique_id=405931296]
-script = ExtResource("1_arn7s")
+script = ExtResource("1_qxmtg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1908073853]
 scale = Vector2(0.3, 0.3)

@@ -9,13 +9,14 @@ class_name Player
 var input_dir: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	pass
+	MinigameManager.minigame_finished.connect(_on_minigame_finished)
 
 func _process(_delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 func _physics_process(delta: float) -> void:
-	global_position += input_dir.normalized() * (move_speed / camera.zoom.x) * delta
+	if not GameManager.minigame_active:
+		global_position += input_dir.normalized() * (move_speed / camera.zoom.x) * delta
 	
 	
 
@@ -30,3 +31,6 @@ func _input(event: InputEvent) -> void:
 		camera.zoom -= Vector2(0.2, 0.2)
 		if camera.zoom <= Vector2(1, 1):
 			camera.zoom = Vector2(1, 1)
+
+func _on_minigame_finished(_success: bool) -> void:
+	camera.make_current()

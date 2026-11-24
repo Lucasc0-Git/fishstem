@@ -3,11 +3,17 @@ extends Node
 
 var main: Main = null
 var game_loaded: bool = false
+var minigame_active: bool = false
 
 var dna: int = 0
 
+
 signal dna_changed()
 
+
+func _ready() -> void:
+	get_viewport().use_hdr_2d = true
+	get_window().hdr_output_requested = true
 
 func add_dna(amount: int) -> void:
 	if amount < 0: return
