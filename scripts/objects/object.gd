@@ -18,5 +18,6 @@ func _on_click_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: 
 func _on_interacted() -> void:
 	if not starts_minigame: return
 	MinigameManager.launch(minigame_scene)
-	if await MinigameManager.minigame_finished:
+	var minigame_finished_args: Array = await MinigameManager.minigame_finished
+	if minigame_finished_args[0]:
 		queue_free()

@@ -1,7 +1,9 @@
 extends Node2D
 class_name Minigame
 
-signal completed(success: bool)
+@export var rewards: Dictionary = {"dna": 10}
+
+signal completed(success: bool, rewards: Dictionary)
 
 func start_minigame(_config: Dictionary = {}) -> void:
 	pass

@@ -1,7 +1,7 @@
 extends Node
 
 signal minigame_started
-signal minigame_finished(success: bool)
+signal minigame_finished(success: bool, rewards: Dictionary)
 
 var active_minigame: Minigame = null
 
@@ -16,8 +16,8 @@ func launch(scene: PackedScene, config: Dictionary = {}) -> void:
 	active_minigame.start_minigame(config)
 	minigame_started.emit()
 
-func _on_minigame_completed(success: bool) -> void:
-	minigame_finished.emit(success)
+func _on_minigame_completed(success: bool, rewards: Dictionary) -> void:
+	minigame_finished.emit(success, rewards)
 	active_minigame.cleanup()
 	GameManager.minigame_active = false
 	active_minigame = null

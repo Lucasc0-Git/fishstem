@@ -32,5 +32,5 @@ func _input(event: InputEvent) -> void:
 		if camera.zoom <= Vector2(1, 1):
 			camera.zoom = Vector2(1, 1)
 
-func _on_minigame_finished(_success: bool) -> void:
+func _on_minigame_finished(_success: bool, _rewards: Dictionary) -> void:
 	camera.make_current()

@@ -22,7 +22,7 @@ func add_dna(amount: int) -> void:
 
 func remove_dna(amount: int) -> void:
 	if amount < 0: return
-	dna += amount
+	dna -= amount
 	dna_changed.emit()
 
 func set_dna(amount: int) -> void:

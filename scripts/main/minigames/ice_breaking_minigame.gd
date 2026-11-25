@@ -1,6 +1,7 @@
 extends Minigame
 class_name IceBreakingMinigame
 
+
 @onready var ice_layer: TileMapLayer = $TileMapLayer
 
 var ice_health: Dictionary = {} # Vector2i as tile coords : health
@@ -26,7 +27,7 @@ func _register_ice_tiles(config: Dictionary = {}) -> void:
 
 func _input(event: InputEvent) -> void:
 	
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed):
 		var local_pos: Vector2 = ice_layer.to_local(get_global_mouse_position())
 		var cell_coords: Vector2i = ice_layer.local_to_map(local_pos)
 		
@@ -52,7 +53,7 @@ func _update_tile_visuals(cell: Vector2i) -> void:
 
 func _check_win_condition() -> void:
 	if ice_health.is_empty():
-		completed.emit(true)
+		completed.emit(true, rewards)
 
 func cleanup() -> void:
 	queue_free()
