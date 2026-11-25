@@ -2,11 +2,36 @@
 
 [ext_resource type="Script" uid="uid://r65quw4wyk08" path="res://scripts/main/minigames/base_minigame.gd" id="1_j055w"]
 [ext_resource type="Script" uid="uid://c7y7de773ty3w" path="res://scripts/main/minigames/minigame_camera.gd" id="2_ncifb"]
+[ext_resource type="Theme" uid="uid://dbtfoo2xn6vwi" path="res://themes/DefaultTheme.tres" id="2_wsvcx"]
 
 [node name="Minigame" type="Node2D" unique_id=784382624]
 script = ExtResource("1_j055w")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1740923505]
 
+[node name="Control" type="Control" parent="UI" unique_id=795938918]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" type="Button" parent="UI/Control" unique_id=1611793622]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -160.0
+offset_right = 300.0
+offset_bottom = -100.0
+grow_vertical = 0
+theme = ExtResource("2_wsvcx")
+text = "Back"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1468493679]
 script = ExtResource("2_ncifb")
+
+[connection signal="pressed" from="UI/Control/BackButton" to="." method="_on_back_button_pressed"]

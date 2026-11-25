@@ -1,10 +1,13 @@
 extends Control
 
 
+@onready var quit_button: Button = $VBoxContainer/QuitButton
 
 
 func _ready() -> void:
 	visible = false
+	if OS.get_name() == "Web":
+		quit_button.visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	

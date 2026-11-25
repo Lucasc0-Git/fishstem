@@ -7,6 +7,7 @@ class_name HUD
 
 @onready var debug_overlay: Control = $DEBUGOverlay
 
+var shop_visible: bool = false
 
 func _ready() -> void:
 	while not GameManager.game_loaded:
@@ -25,6 +26,7 @@ func _on_dna_changed() -> void:
 
 func _on_shop_button_toggled(toggled_on: bool) -> void:
 	shop.visible = toggled_on
+	shop_visible = toggled_on
 
 func _input(event: InputEvent) -> void:
 	

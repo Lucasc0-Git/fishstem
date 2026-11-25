@@ -10,3 +10,7 @@ func start_minigame(_config: Dictionary = {}) -> void:
 
 func cleanup() -> void:
 	queue_free()
+
+
+func _on_back_button_pressed() -> void:
+	completed.emit(false, {})

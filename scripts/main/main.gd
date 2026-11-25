@@ -2,6 +2,7 @@ extends Node2D
 class_name Main
 
 @onready var map: Map = $Map
+@onready var hud: HUD = $HUD
 
 var available_purchases: Dictionary[String, bool] = {}
 var player_purchased: Dictionary[String, bool] = {}
