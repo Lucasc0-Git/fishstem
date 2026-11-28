@@ -25,7 +25,7 @@ script = ExtResource("2_wql3r")
 dirt_bg_full_alpha = 0.9
 dirt_bg_clean_alpha = 0.0
 dirt_color = Color(0, 0.334, 0, 1)
-cursor_cleaning_radius = 30.0
+base_cursor_cleaning_radius = 15.0
 margin = 50.0
 pixel_scale = 2
 

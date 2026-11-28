@@ -35,7 +35,7 @@ func _populate_shop_items_list() -> void:
 					node.request_buy.connect(_on_player_purchase_requested)
 
 func _on_player_purchase_requested(id: String, base_cost: int) -> void:
-	if not id in GameManager.main.available_purchases:
+	if not id in ShopManager.available_purchases:
 		return
 	if base_cost > GameManager.dna:
 		return

@@ -6,7 +6,7 @@ class_name DirtCleaningMinigame
 
 @export var dirt_color: Color = Color(0.0, 0.334, 0.0, 1.0)
 
-@export var cursor_cleaning_radius: float = 30.0
+@export var base_cursor_cleaning_radius: float = 15.0
 @export var margin: float = 50.0 # For keeping points off the screen edge
 @export var pixel_scale: int = 2
 
@@ -21,10 +21,17 @@ var remaining_dirty_pixels: int = 0
 var erased_color: Color
 var is_cleaning: bool = false
 var last_mouse_pos: Vector2
+var brush_size_modifier: float = 1.0
+var current_cleaning_radius: float = 15.0
 
 func _ready() -> void:
 	texture_rect.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	erased_color = Color(dirt_color.r, dirt_color.g, dirt_color.b, 0.0)
+	
+	_update_brush_size()
+	
+	ShopManager.shop_item_purchased.connect(_on_shop_item_purchased)
+	
 	_setup_dirt()
 
 func _setup_dirt() -> void:
@@ -76,7 +83,7 @@ func clean_line(from: Vector2, to: Vector2) -> void:
 		return
 	
 	var dist := from.distance_to(to)
-	var step_size := maxf(1.0, cursor_cleaning_radius * 0.25)
+	var step_size := maxf(1.0, current_cleaning_radius * 0.25)
 	var steps := maxi(1, int(ceil(dist / step_size)))
 	
 	var any_changed: bool = false
@@ -93,7 +100,7 @@ func clean_line(from: Vector2, to: Vector2) -> void:
 func _erase_circle_at(screen_pos: Vector2) -> bool:
 	
 	var center := Vector2i(screen_pos / pixel_scale)
-	var r := int(cursor_cleaning_radius / pixel_scale)
+	var r := int(current_cleaning_radius / pixel_scale)
 	var r_sq := r * r
 	var changed := false
 	
@@ -113,3 +120,12 @@ func _erase_circle_at(screen_pos: Vector2) -> bool:
 					changed = true
 	
 	return changed
+
+func _update_brush_size() -> void:
+	current_cleaning_radius = base_cursor_cleaning_radius
+	if ShopManager.has_upgrade("upgrade_brush_size_1"):
+		brush_size_modifier = 2.0
+	current_cleaning_radius *= brush_size_modifier
+
+func _on_shop_item_purchased(_id: String) -> void:
+	_update_brush_size()
