@@ -1,5 +1,56 @@
 [gd_scene format=3 uid="uid://cs3fihlmayp6v"]
 
 [ext_resource type="PackedScene" uid="uid://0hepmx8sj2di" path="res://scenes/main/minigames/minigame.tscn" id="1_fi33n"]
+[ext_resource type="Script" uid="uid://dtg1555si24df" path="res://scripts/main/minigames/dirt_cleaning_minigame.gd" id="2_wql3r"]
+
+[sub_resource type="Gradient" id="Gradient_fi33n"]
+offsets = PackedFloat32Array(0.1764706, 1)
+colors = PackedColorArray(0, 0.23066661, 0.54033667, 1, 3.272891e-06, 0.6229482, 0.87070423, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2a8ad"]
+gradient = SubResource("Gradient_fi33n")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_wql3r"]
+offsets = PackedFloat32Array(0.2720588, 1)
+colors = PackedColorArray(0, 0.22183838, 0, 1, 0.12727237, 0.5160814, 2.2140146e-06, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wql3r"]
+gradient = SubResource("Gradient_wql3r")
+fill_from = Vector2(0.74358976, 1)
+fill_to = Vector2(0.9102564, 0)
 
 [node name="DirtCleaningMinigame" unique_id=784382624 instance=ExtResource("1_fi33n")]
+script = ExtResource("2_wql3r")
+dirt_bg_full_alpha = 0.9
+dirt_bg_clean_alpha = 0.0
+dirt_color = Color(0, 0.334, 0, 1)
+cursor_cleaning_radius = 30.0
+margin = 50.0
+pixel_scale = 2
+
+[node name="OceanBG" type="TextureRect" parent="." index="2" unique_id=708553342]
+unique_name_in_owner = true
+offset_left = -979.0
+offset_top = -573.0
+offset_right = 983.0
+offset_bottom = 609.0
+texture = SubResource("GradientTexture2D_2a8ad")
+
+[node name="DirtLayerBG" type="TextureRect" parent="." index="3" unique_id=2042419607]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.78039217)
+offset_left = -978.0
+offset_top = -575.0
+offset_right = 984.0
+offset_bottom = 607.0
+texture = SubResource("GradientTexture2D_wql3r")
+
+[node name="DirtLayer" type="TextureRect" parent="." index="4" unique_id=758153612]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

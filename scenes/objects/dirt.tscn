@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dbjybhequci3t" path="res://scenes/objects/game_object.tscn" id="1_cmwh6"]
 [ext_resource type="Texture2D" uid="uid://cigsxhdwemx1s" path="res://textures/dirt_particle.png" id="2_0lgw5"]
+[ext_resource type="PackedScene" uid="uid://cs3fihlmayp6v" path="res://scenes/main/minigames/dirt_cleaning_minigame.tscn" id="2_8x5d8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmwh6"]
 radius = 126.77539
@@ -33,6 +34,8 @@ scale_min = 0.19999999
 scale_max = 0.5
 
 [node name="Dirt" unique_id=405931296 instance=ExtResource("1_cmwh6")]
+starts_minigame = true
+minigame_scene = ExtResource("2_8x5d8")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1908073853]
 visible = false

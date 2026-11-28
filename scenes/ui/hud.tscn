@@ -230,6 +230,7 @@ base_cost = 10
 [node name="DEBUGOverlay" type="Control" parent="." unique_id=93092433]
 process_mode = 3
 visible = false
+modulate = Color(0.43898636, 0.9938094, 7.70092e-07, 1)
 z_index = 4096
 layout_mode = 3
 anchors_preset = 15
