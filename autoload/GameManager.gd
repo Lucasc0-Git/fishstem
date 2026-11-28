@@ -34,3 +34,12 @@ func start_game(_save_name: String = "save not made :P") -> void:
 	print("starting the game")
 	await SceneTransition.change_scene_to_file(Constants.MAIN_SCENE_FILEPATH)
 	get_tree().paused = false
+
+## Helper functions
+
+func get_all_children(node: Node) -> Array[Node]:
+	var nodes: Array[Node] = []
+	for child in node.get_children():
+		nodes.append(child)
+		nodes.append_array(get_all_children(child))
+	return nodes
