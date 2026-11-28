@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cs3fihlmayp6v"]
+
+[ext_resource type="PackedScene" uid="uid://0hepmx8sj2di" path="res://scenes/main/minigames/minigame.tscn" id="1_fi33n"]
+
+[node name="DirtCleaningMinigame" unique_id=784382624 instance=ExtResource("1_fi33n")]

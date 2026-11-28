@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://chm5dv8vvr7fw" path="res://textures/testing-bg.png" id="1_sxf4j"]
 [ext_resource type="Script" uid="uid://ddfpa4o5jcdel" path="res://scripts/main/map.gd" id="1_tqkkf"]
 [ext_resource type="PackedScene" uid="uid://bvc8dnr0m0vuh" path="res://scenes/objects/ice.tscn" id="3_a2pkv"]
+[ext_resource type="PackedScene" uid="uid://cew4fihkxxha6" path="res://scenes/objects/dirt.tscn" id="4_ph54e"]
 
 [sub_resource type="Gradient" id="Gradient_scl2d"]
 offsets = PackedFloat32Array(0.39156628, 1)
@@ -41,6 +42,12 @@ scale = Vector2(0.5, 0.5)
 [node name="Ice2" parent="TestingMap2" unique_id=1135535542 instance=ExtResource("3_a2pkv")]
 position = Vector2(567, 393)
 scale = Vector2(0.5, 0.5)
+
+[node name="Dirt" parent="TestingMap2" unique_id=714163157 instance=ExtResource("4_ph54e")]
+position = Vector2(130, 268)
+
+[node name="Dirt2" parent="TestingMap2" unique_id=1788491431 instance=ExtResource("4_ph54e")]
+position = Vector2(-775, 154)
 
 [node name="Lvl1" type="Node2D" parent="." unique_id=727593971]
 

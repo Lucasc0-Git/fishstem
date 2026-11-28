@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cew4fihkxxha6"]
+
+[ext_resource type="PackedScene" uid="uid://dbjybhequci3t" path="res://scenes/objects/game_object.tscn" id="1_cmwh6"]
+[ext_resource type="Texture2D" uid="uid://cigsxhdwemx1s" path="res://textures/dirt_particle.png" id="2_0lgw5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmwh6"]
+radius = 126.77539
+
+[sub_resource type="Gradient" id="Gradient_0lgw5"]
+offsets = PackedFloat32Array(0.88235295, 1)
+colors = PackedColorArray(0.050687052, 0.29162923, 9.62615e-08, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2a8ad"]
+gradient = SubResource("Gradient_0lgw5")
+width = 500
+height = 500
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cmwh6"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 25, 0)
+emission_shape = 1
+emission_sphere_radius = 100.0
+angle_min = -292.9
+angle_max = 280.7
+direction = Vector3(0, -1, 0)
+spread = 106.305
+initial_velocity_max = 50.0
+gravity = Vector3(0, -25, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+
+[node name="Dirt" unique_id=405931296 instance=ExtResource("1_cmwh6")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1908073853]
+visible = false
+
+[node name="CollisionShape2D" parent="ClickArea" parent_id_path=PackedInt32Array(1910408838) index="0" unique_id=1945367427]
+shape = SubResource("CircleShape2D_cmwh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3" unique_id=1335570348]
+modulate = Color(1, 1, 1, 0.39607844)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_2a8ad")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="4" unique_id=1810389873]
+amount = 5
+texture = ExtResource("2_0lgw5")
+lifetime = 4.0
+explosiveness = 0.21
+process_material = SubResource("ParticleProcessMaterial_cmwh6")
